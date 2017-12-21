@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="ICT13580009EndB.Mainpage"
+    Title="CarShop">
+
+    <Contentpage.ToolbarItem>
+
+        <ToolbarItem
+        Text="new"
+        x:Name="Newbutton"/>
+
+
+    </Contentpage.ToolbarItem>
+    <ListView
+        x:Name="productListView">
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <Textcell
+                    Text="{Binding Name}"
+                    Detail="{Binding Description}">
+
+                    <Textcell.ContextActions>
+                        <MenuItem
+                            Text="Edit"
+                            CommandParameter="{Binding .}"
+                            Clicked="Edit_Clicked"/>
+
+                        <MenuItem
+                            Text="Delete"
+                            CommandParameter="{Binding .}"
+                            IsDestructive="true"
+                            Clicked="Delete_ClickedAsync"/>
+                        
+                    </Textcell.ContextActions>
+                    
+                </Textcell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+
+
+    </ListView>
+
+  
+	
+</ContentPage>
